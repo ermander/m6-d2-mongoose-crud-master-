@@ -1,6 +1,7 @@
-const { Schema } = require("mongoose")
+const { Schema, model } = require("mongoose")
 const mongoose = require("mongoose")
 
+// Definizione dello schema del DB
 const UserSchema = new Schema({
   name: {
     type: String,
@@ -24,4 +25,4 @@ const UserSchema = new Schema({
   professions: Array,
 })
 
-module.exports = mongoose.model("User", UserSchema)
+module.exports = model("User", UserSchema)

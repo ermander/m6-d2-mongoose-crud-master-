@@ -1,4 +1,4 @@
-const { Schema } = require("mongoose")
+const { Schema, model } = require("mongoose")
 const mongoose = require("mongoose")
 
 const BookSchema = new Schema(
@@ -11,7 +11,7 @@ const BookSchema = new Schema(
     genre: Array,
     price: Number,
   },
-  { _id: false }
+  { _id: false } // Comunica a mongoDB di non creare l'id, che verrà creato da node,js
 )
 
-module.exports = mongoose.model("Book", BookSchema)
+module.exports = model("Book", BookSchema)
